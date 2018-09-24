@@ -106,7 +106,13 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="IBattleEffect.cs" />
+    <Compile Include="IBattleManager.cs" />
+    <Compile Include="IBattlegroundObject.cs" />
+    <Compile Include="IBattlegroundTile.cs" />
+    <Compile Include="IPlayer.cs" />
+    <Compile Include="IRobot.cs" />
+    <Compile Include="ITargetedBattleEffect.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\RoboShowdown.Interfaces.rd.xml" />
   </ItemGroup>

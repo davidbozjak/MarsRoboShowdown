@@ -106,8 +106,12 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="BattleManager.cs" />
+    <Compile Include="GuidedRobot.cs" />
+    <Compile Include="Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TraversableTile.cs" />
+    <Compile Include="ViewModel\BattlegroundControlViewModel.cs" />
     <EmbeddedResource Include="Properties\RoboShowdown.Logic.rd.xml" />
   </ItemGroup>
   <ItemGroup>

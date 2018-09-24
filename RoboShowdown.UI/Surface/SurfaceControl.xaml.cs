@@ -15,11 +15,11 @@ using Windows.UI.Xaml.Navigation;
 
 // The User Control item template is documented at https://go.microsoft.com/fwlink/?LinkId=234236
 
-namespace RoboShowdown.UI
+namespace RoboShowdown.UI.Surface
 {
-    public sealed partial class BattlegroundControl : UserControl
+    public sealed partial class SurfaceControl : UserControl
     {
-        public BattlegroundControl()
+        public SurfaceControl()
         {
             this.InitializeComponent();
         }
