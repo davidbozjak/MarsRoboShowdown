@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RoboShowdown.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -19,9 +20,25 @@ namespace RoboShowdown.UI.Surface
 {
     public sealed partial class SurfaceControl : UserControl
     {
+        private IBattlegroundTile tile;
+        public IBattlegroundTile Tile
+        {
+            get => this.tile;
+            set => this.SetTile(value);
+        }
+
+        public bool DrawRobot => this.tile?.Robot != null;
+
         public SurfaceControl()
         {
             this.InitializeComponent();
+        }
+
+        void SetTile(IBattlegroundTile newValue)
+        {
+            this.tile = newValue;
+
+            this.Bindings.Update();
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RoboShowdown.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -19,6 +20,8 @@ namespace RoboShowdown.UI.Robot
 {
     public sealed partial class RobotControl : UserControl
     {
+        public IRobot Robot { get; set; }
+
         public RobotControl()
         {
             this.InitializeComponent();

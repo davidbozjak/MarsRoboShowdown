@@ -13,6 +13,8 @@ namespace RoboShowdown.Logic
 
         public int YOffset { get; }
 
+        public IRobot Robot { get; set; }
+
         protected TraversableTile(int x, int y, Color color)
         {
             this.XOffset = x;

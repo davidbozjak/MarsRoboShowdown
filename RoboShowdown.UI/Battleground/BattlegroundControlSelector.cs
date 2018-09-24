@@ -14,12 +14,15 @@ namespace RoboShowdown.UI.Battleground
             {
                 return new RobotControl();
             }
-            else if (battlegroundObject is IBattlegroundTile)
+            else if (battlegroundObject is IBattlegroundTile tile)
             {
-                return new SurfaceControl();
+                return new SurfaceControl
+                {
+                    Tile = tile
+                };
             }
 
-            throw new NotImplementedException();
+            return null;
         }
     }
 }

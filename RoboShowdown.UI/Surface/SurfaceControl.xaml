@@ -3,13 +3,34 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:RoboShowdown.UI.Surface"
+    xmlns:robot="using:RoboShowdown.UI.Robot"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     d:DesignHeight="300"
     d:DesignWidth="400">
 
-    <Grid Background="White">
+    <Grid>
+        <Grid.Background>
+            <SolidColorBrush Color="{x:Bind Tile.BackgroundColor}"/>
+        </Grid.Background>
 
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="8*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        
+        <robot:RobotControl 
+            Grid.Row="1"
+            Grid.Column="1"
+            Robot="{x:Bind Tile.Robot}"
+            Visibility="{x:Bind DrawRobot}"/>
     </Grid>
 </UserControl>

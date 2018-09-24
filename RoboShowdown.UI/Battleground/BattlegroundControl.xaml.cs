@@ -1,8 +1,8 @@
 ﻿using RoboShowdown.Logic;
 using RoboShowdown.Logic.ViewModel;
 using Windows.UI.Xaml.Controls;
-
-// The User Control item template is documented at https://go.microsoft.com/fwlink/?LinkId=234236
+using System.Linq;
+using RoboShowdown.Interfaces;
 
 namespace RoboShowdown.UI.Battleground
 {
@@ -14,12 +14,22 @@ namespace RoboShowdown.UI.Battleground
         {
             this.InitializeComponent();
 
+            var player = new Player("Rookie", 5, 5);
+
             this.ViewModel = new BattlegroundControlViewModel(
-                new[] { new Player("Rookie", 2, 2) },
-                new [] { new TraversableTile(5, 5) },
+                new[] { player },
+                new [] 
+                {
+                    new TraversableTile(5, 5) { Robot = player.Robot },
+                    new TraversableTile(5, 4),
+                    new TraversableTile(5, 3),
+                    new TraversableTile(5, 6),
+                    new TraversableTile(4, 3),
+                },
                 new BattleManager());
 
-            this.battleGrid.Reset(10, 10, this.ViewModel.BattlegroundObjects);
+            this.battleGrid.Reset(10, 10);
+            this.battleGrid.DrawBattleState(this.ViewModel.Tiles.Cast<IBattlegroundObject>());
         }
     }
 }

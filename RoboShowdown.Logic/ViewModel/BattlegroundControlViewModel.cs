@@ -12,8 +12,6 @@ namespace RoboShowdown.Logic.ViewModel
 
         public IBattleManager BattleManager { get; }
 
-        public ICollection<IBattlegroundObject> BattlegroundObjects { get; }
-
         public BattlegroundControlViewModel(
             IEnumerable<IPlayer> players,
             IEnumerable<IBattlegroundTile> tiles,
@@ -21,12 +19,6 @@ namespace RoboShowdown.Logic.ViewModel
         {
             this.Players = players.ToList().AsReadOnly();
             this.Tiles = tiles.ToList().AsReadOnly();
-
-            var allObjects = new List<IBattlegroundObject>();
-            allObjects.AddRange(this.Players.Select(w => w.Robot));
-            allObjects.AddRange(this.Tiles);
-
-            this.BattlegroundObjects = allObjects.ToList().AsReadOnly();
 
             this.BattleManager = battleManager;
         }

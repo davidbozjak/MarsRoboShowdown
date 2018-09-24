@@ -7,5 +7,7 @@ namespace RoboShowdown.Interfaces
         IBattleEffect BattleEffect { get; }
 
         Color BackgroundColor { get; }
+
+        IRobot Robot { get; set; }
     }
 }
