@@ -66,7 +66,10 @@ namespace RoboShowdown.UI
                     // When the navigation stack isn't restored navigate to the first page,
                     // configuring the new page by passing required information as a navigation
                     // parameter
-                    rootFrame.Navigate(typeof(MainPage), e.Arguments);
+                    
+                    // TEMP, navigating directly into BattlePage to speed up dev inner loop
+                    //rootFrame.Navigate(typeof(MainPage), e.Arguments);
+                    rootFrame.Navigate(typeof(BattlePage), e.Arguments);
                 }
                 // Ensure the current window is active
                 Window.Current.Activate();
